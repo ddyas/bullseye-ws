@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Bullseye - Reach Decision-Makers Without the Gatekeepers",
   description:
     "Bullseye reveals verified mobile numbers behind LinkedIn profiles. Stop waiting for connection requests — start calling today.",
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

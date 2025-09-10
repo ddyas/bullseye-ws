@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 import Link from "next/link"
-import { Check, Phone, Search, Download, RefreshCw } from "lucide-react"
+import { CheckCircle, Phone, Search, Download, RefreshCw } from "lucide-react"
 import { PricingCard } from "@/components/pricing-card"
 import Image from "next/image"
 
@@ -34,31 +34,37 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center fade-in">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-              Reach Decision-Makers
-              <br />
-              Without the Gatekeepers.
+              Connect Directly with Decision Makers. On the Double!
             </h1>
             <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto">
-              Bullseye reveals verified mobile numbers behind LinkedIn profiles. Stop waiting for connection requests —
-              start calling today.
+              Don't waste time with LinkedIn connections. Get access to verified B2B mobiles your team can call
+              instantly.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
-              <div className="flex items-center justify-center md:justify-start">
-                <Check className="w-5 h-5 text-green-500 mr-2" />
-                <span>Access real Australian mobile numbers</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
+              <div className="flex items-start space-x-3 p-4">
+                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <span className="text-sm font-medium text-gray-700 leading-relaxed">
+                  Access to 3M+ verified mobiles
+                </span>
               </div>
-              <div className="flex items-center justify-center md:justify-start">
-                <Check className="w-5 h-5 text-green-500 mr-2" />
-                <span>Skip InMail and filters</span>
+              <div className="flex items-start space-x-3 p-4">
+                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <span className="text-sm font-medium text-gray-700 leading-relaxed">
+                  Bypass InMail and Catch-all email firewalls
+                </span>
               </div>
-              <div className="flex items-center justify-center md:justify-start">
-                <Check className="w-5 h-5 text-green-500 mr-2" />
-                <span>Export contacts in one click</span>
+              <div className="flex items-start space-x-3 p-4">
+                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <span className="text-sm font-medium text-gray-700 leading-relaxed">
+                  Share key contacts with your team
+                </span>
               </div>
-              <div className="flex items-center justify-center md:justify-start">
-                <Check className="w-5 h-5 text-green-500 mr-2" />
-                <span>Perfect for founders, agencies, SDRs</span>
+              <div className="flex items-start space-x-3 p-4">
+                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <span className="text-sm font-medium text-gray-700 leading-relaxed">
+                  Built for Sales Managers, BDMs and Growth
+                </span>
               </div>
             </div>
 
@@ -76,7 +82,7 @@ export default function HomePage() {
                 />
                 Download for Chrome
               </Link>
-              <p className="text-gray-500 italic">The fastest way to connect with Australia's top B2B prospects.</p>
+              <p className="text-gray-500 italic">The most time efficient way to prospect Australian B2B.</p>
             </div>
           </div>
         </div>
@@ -105,8 +111,8 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-gradient-to-br from-black to-gray-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg hover:shadow-xl transition-shadow duration-200">
                 <Phone className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Verified Data</h3>
-              <p className="text-gray-600">Access verified mobile + firmographic data instantly</p>
+              <h3 className="text-xl font-semibold mb-2">Access verified data</h3>
+              <p className="text-gray-600">Access verified mobile + position data instantly</p>
             </div>
 
             <div className="text-center fade-in">
@@ -156,7 +162,7 @@ export default function HomePage() {
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 Dashboard & Credits
               </h3>
               <p className="text-gray-600">Track your usage and manage credits from the dashboard</p>
@@ -186,7 +192,7 @@ export default function HomePage() {
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 Export & Manage Contacts
               </h3>
               <p className="text-gray-600">Export revealed contacts to CSV or manage your contact list</p>
@@ -352,7 +358,7 @@ export default function HomePage() {
       {/* Final CTA Banner */}
       <section className="py-20 bg-black text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-12">Start calling better leads — today.</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-12">The perfect companion for LinkedIn prospecting</h2>
           <div className="flex flex-col items-center space-y-4">
             <Link
               href="/download"

@@ -29,7 +29,7 @@ export function PricingCard({
     >
       {isPopular && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <span className="bg-gradient-to-r from-green-400 to-green-500 text-black px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
+          <span className="bg-gradient-to-r from-green-400 to-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
             ⭐ Most Popular
           </span>
         </div>
