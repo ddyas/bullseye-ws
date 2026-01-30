@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Check } from "lucide-react"
 import { PricingCard } from "@/components/pricing-card"
+import Link from "next/link"
 
 export default function PricingPage() {
   const [isAnnual, setIsAnnual] = useState(true)
@@ -126,7 +127,7 @@ export default function PricingPage() {
         <div className="text-center">
           <p className="text-lg text-gray-600 mb-8">Add-on: Top up 50 credits anytime for $37 AUD</p>
           <div className="flex flex-col items-center space-y-4">
-            <button className="btn-primary text-lg">Download Extension</button>
+            <Link href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb" target="_blank" className="btn-primary text-lg">Download Extension</Link>
           </div>
         </div>
       </div>

@@ -25,9 +25,9 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <div className="space-y-2">
               <Link
-                href="/download"
+                href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
+                target="_blank"
                 className="block text-gray-300 hover:text-white transition-colors"
-                onClick={() => window.scrollTo(0, 0)}
               >
                 Download
               </Link>

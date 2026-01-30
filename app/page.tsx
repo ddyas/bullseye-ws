@@ -70,7 +70,8 @@ export default function HomePage() {
 
             <div className="flex flex-col items-center space-y-4">
               <Link
-                href="/download"
+                href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
+                target="_blank"
                 className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg"
               >
                 <Image
@@ -306,7 +307,7 @@ export default function HomePage() {
           <div className="text-center fade-in">
             <p className="text-lg text-gray-600 mb-8">Add-on: Top up 50 credits anytime for $37 AUD</p>
             <div className="flex flex-col items-center space-y-4">
-              <Link href="/download" className="btn-primary text-lg">
+              <Link href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb" target="_blank" className="btn-primary text-lg">
                 Download Extension
               </Link>
             </div>
@@ -361,7 +362,8 @@ export default function HomePage() {
           <h2 className="text-3xl lg:text-5xl font-bold mb-12">The perfect companion for LinkedIn prospecting</h2>
           <div className="flex flex-col items-center space-y-4">
             <Link
-              href="/download"
+              href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
+              target="_blank"
               className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-200 hover:scale-105 shadow-lg"
             >
               <Image src="/images/chrome-extension-logo.png" alt="Chrome" width={20} height={20} className="w-5 h-5" />

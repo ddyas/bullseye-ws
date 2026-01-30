@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export default function DownloadPage() {
   return (
@@ -9,10 +10,14 @@ export default function DownloadPage() {
 
         <div className="mb-16">
           <div className="flex flex-col items-center space-y-6">
-            <button className="inline-flex items-center gap-3 bg-black text-white px-12 py-6 rounded-lg font-semibold text-xl hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg">
+            <Link
+              href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
+              target="_blank"
+              className="inline-flex items-center gap-3 bg-black text-white px-12 py-6 rounded-lg font-semibold text-xl hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg"
+            >
               <Image src="/images/chrome-extension-logo.png" alt="Chrome" width={24} height={24} className="w-6 h-6" />
               Install from Chrome Web Store
-            </button>
+            </Link>
           </div>
         </div>
 

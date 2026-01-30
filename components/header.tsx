@@ -49,7 +49,8 @@ export function Header() {
               Contact
             </Link>
             <Link
-              href="/download"
+              href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
+              target="_blank"
               className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-md"
             >
               <Image src="/images/chrome-extension-logo.png" alt="Chrome" width={16} height={16} className="w-4 h-4" />
@@ -96,7 +97,8 @@ export function Header() {
                 Contact
               </Link>
               <Link
-                href="/download"
+                href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
+                target="_blank"
                 className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-md"
               >
                 <Image
