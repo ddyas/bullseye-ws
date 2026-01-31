@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function EmailConfirmedPage() {
   return (
-    <div className="py-6 lg:py-10">
+    <div className="py-8 lg:py-12">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white border border-gray-200 rounded-2xl p-6 lg:p-10 text-center shadow-sm">
           <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-5">
@@ -30,7 +30,7 @@ export default function EmailConfirmedPage() {
                 <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold">
                   1
                 </div>
-                <p className="text-gray-700 text-sm leading-snug">Click Bullseye icon in Chrome toolbar</p>
+                <p className="text-gray-700 text-sm leading-snug">Click the <span className="inline-flex items-center align-middle mx-0.5"><svg viewBox="0 0 32 32" className="w-4 h-4 inline"><circle cx="16" cy="16" r="14" fill="black"/><circle cx="16" cy="16" r="10" fill="none" stroke="white" strokeWidth="2"/><circle cx="16" cy="16" r="6" fill="none" stroke="white" strokeWidth="2"/><circle cx="16" cy="16" r="2.5" fill="white"/></svg></span> icon in Chrome toolbar</p>
               </div>
               <div className="text-center">
                 <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold">
