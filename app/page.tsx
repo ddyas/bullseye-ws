@@ -1,12 +1,14 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { CheckCircle, Phone, Search, Download, RefreshCw } from "lucide-react"
 import { PricingCard } from "@/components/pricing-card"
 import Image from "next/image"
 
 export default function HomePage() {
+  const [isAnnual, setIsAnnual] = useState(true)
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -34,11 +36,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center fade-in">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-              Connect Directly with Decision Makers. On the Double!
+              Connect directly with decision-makers.
             </h1>
             <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto">
-              Don't waste time with LinkedIn connections. Get access to verified B2B mobiles your team can call
-              instantly.
+              Stop waiting. Start calling.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
@@ -272,6 +273,23 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 fade-in">
             <h2 className="text-3xl lg:text-5xl font-bold mb-6">Transparent, flexible pricing</h2>
+            <div className="flex items-center justify-center mb-8">
+              <span className={`mr-3 ${!isAnnual ? "font-semibold" : "text-gray-600"}`}>Monthly</span>
+              <button
+                className="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                onClick={() => setIsAnnual(!isAnnual)}
+              >
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-black transition-transform ${
+                    isAnnual ? "translate-x-6" : "translate-x-1"
+                  }`}
+                />
+              </button>
+              <span className={`ml-3 ${isAnnual ? "font-semibold" : "text-gray-600"}`}>Annual</span>
+              {isAnnual && (
+                <span className="ml-2 bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">Save 25%</span>
+              )}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -281,7 +299,7 @@ export default function HomePage() {
               annualPrice={49}
               credits={100}
               features={["100 credits per month", "LinkedIn integration", "CSV export", "Email support"]}
-              isAnnual={true}
+              isAnnual={isAnnual}
             />
 
             <PricingCard
@@ -291,7 +309,7 @@ export default function HomePage() {
               credits={250}
               features={["250 credits per month", "LinkedIn integration", "CSV export", "Priority support"]}
               isPopular={true}
-              isAnnual={true}
+              isAnnual={isAnnual}
             />
 
             <PricingCard
@@ -300,7 +318,7 @@ export default function HomePage() {
               annualPrice={195}
               credits={500}
               features={["500 credits per month", "LinkedIn integration", "CSV export", "Priority support"]}
-              isAnnual={true}
+              isAnnual={isAnnual}
             />
           </div>
 

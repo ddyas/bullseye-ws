@@ -1,4 +1,5 @@
 import { Check } from "lucide-react"
+import Link from "next/link"
 
 interface PricingCardProps {
   title: string
@@ -56,13 +57,15 @@ export function PricingCard({
         ))}
       </ul>
 
-      <button
-        className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
+      <Link
+        href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
+        target="_blank"
+        className={`block w-full py-3 px-6 rounded-lg font-semibold text-center transition-colors ${
           isPopular ? "bg-white text-black hover:bg-gray-100" : "bg-black text-white hover:bg-gray-800"
         }`}
       >
         Get Started
-      </button>
+      </Link>
     </div>
   )
 }

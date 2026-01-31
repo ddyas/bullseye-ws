@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { CheckCircle } from "lucide-react"
+import { CheckCircle, Linkedin } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -38,10 +38,12 @@ export default function EmailConfirmedPage() {
         </div>
 
         <Link
-          href="/"
+          href="https://www.linkedin.com"
+          target="_blank"
           className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg"
         >
-          Go to Homepage
+          <Linkedin className="w-5 h-5" />
+          Go to LinkedIn
         </Link>
         
         <p className="mt-6 text-gray-500 italic">
