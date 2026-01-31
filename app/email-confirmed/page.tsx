@@ -30,7 +30,7 @@ export default function EmailConfirmedPage() {
                 <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold">
                   1
                 </div>
-                <p className="text-gray-700 text-sm leading-snug">Click the <span className="inline-flex items-center align-middle mx-0.5"><svg viewBox="0 0 32 32" className="w-4 h-4 inline"><circle cx="16" cy="16" r="14" fill="black"/><circle cx="16" cy="16" r="10" fill="none" stroke="white" strokeWidth="2"/><circle cx="16" cy="16" r="6" fill="none" stroke="white" strokeWidth="2"/><circle cx="16" cy="16" r="2.5" fill="white"/></svg></span> icon in Chrome toolbar</p>
+                <p className="text-gray-700 text-sm leading-snug">Click the <span className="inline-flex items-center align-middle mx-0.5"><svg viewBox="0 0 32 32" className="w-4 h-4 inline"><circle cx="16" cy="16" r="14" fill="black"/><circle cx="16" cy="16" r="10" fill="none" stroke="white" strokeWidth="2"/><circle cx="16" cy="16" r="6" fill="none" stroke="white" strokeWidth="2"/><circle cx="16" cy="16" r="2.5" fill="white"/></svg></span> icon Bullseye Extension in Chrome toolbar</p>
               </div>
               <div className="text-center">
                 <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold">
