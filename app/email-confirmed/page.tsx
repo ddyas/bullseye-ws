@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { CheckCircle, Linkedin } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -11,8 +10,10 @@ export default function EmailConfirmedPage() {
   return (
     <div className="py-20 lg:py-32">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-8">
-          <CheckCircle className="w-10 h-10 text-white" />
+        <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-8">
+          <svg viewBox="0 0 24 24" className="w-10 h-10 text-white" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
         </div>
 
         <h1 className="text-4xl lg:text-5xl font-bold mb-4">Email Confirmed!</h1>
@@ -22,27 +23,35 @@ export default function EmailConfirmedPage() {
           You're all set to start using Bullseye.
         </p>
 
-        <div className="flex flex-col md:flex-row justify-center gap-8 mb-12">
-          <div className="flex items-center gap-3">
-            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-            <span className="text-gray-700">Open the Bullseye extension</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-2xl mx-auto">
+          <div className="text-center">
+            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">
+              1
+            </div>
+            <p className="text-gray-700 font-medium">Open the Bullseye extension</p>
           </div>
-          <div className="flex items-center gap-3">
-            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-            <span className="text-gray-700">Log in with your credentials</span>
+          <div className="text-center">
+            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">
+              2
+            </div>
+            <p className="text-gray-700 font-medium">Log in with your credentials</p>
           </div>
-          <div className="flex items-center gap-3">
-            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-            <span className="text-gray-700">Start finding mobiles!</span>
+          <div className="text-center">
+            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">
+              3
+            </div>
+            <p className="text-gray-700 font-medium">Start finding mobiles!</p>
           </div>
         </div>
 
         <Link
           href="https://www.linkedin.com"
           target="_blank"
-          className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg"
+          className="inline-flex items-center gap-3 bg-[#0A66C2] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#004182] transition-all duration-200 hover:scale-105 shadow-lg"
         >
-          <Linkedin className="w-5 h-5" />
+          <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
           Go to LinkedIn
         </Link>
         
