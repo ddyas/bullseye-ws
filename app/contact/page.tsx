@@ -3,7 +3,14 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Mail, MessageSquare } from "lucide-react"
+import { Mail, MessageSquare, AlertCircle, Loader2 } from "lucide-react"
+
+const SuccessIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="10" fill="#22c55e"/>
+    <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -11,11 +18,35 @@ export default function ContactPage() {
     email: "",
     message: "",
   })
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
+    setStatus('loading')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message')
+      }
+
+      setStatus('success')
+      setFormData({ name: '', email: '', message: '' })
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage(error instanceof Error ? error.message : 'Something went wrong')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -82,9 +113,40 @@ export default function ContactPage() {
                 />
               </div>
 
-              <button type="submit" className="btn-primary w-full">
-                Send Message
+              <button 
+                type="submit" 
+                className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={status === 'loading'}
+              >
+                {status === 'loading' ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  'Send Message'
+                )}
               </button>
+
+              {status === 'success' && (
+                <div className="flex items-center gap-3 text-green-700 bg-green-50 border border-green-200 p-4 rounded-xl">
+                  <SuccessIcon />
+                  <div>
+                    <p className="font-semibold">Message sent successfully!</p>
+                    <p className="text-sm text-green-600">We'll get back to you within 24 hours.</p>
+                  </div>
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="flex items-center gap-3 text-red-700 bg-red-50 border border-red-200 p-4 rounded-xl">
+                  <AlertCircle className="w-6 h-6 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold">Failed to send message</p>
+                    <p className="text-sm text-red-600">{errorMessage}</p>
+                  </div>
+                </div>
+              )}
             </form>
           </div>
 

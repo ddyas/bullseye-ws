@@ -11,7 +11,7 @@ export default function EmailConfirmedPage() {
     <div className="py-8 lg:py-12">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white border border-gray-200 rounded-2xl p-6 lg:p-10 text-center shadow-sm">
-          <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-5">
+          <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-5">
             <svg viewBox="0 0 24 24" className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12" />
             </svg>

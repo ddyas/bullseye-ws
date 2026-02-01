@@ -5,8 +5,8 @@ export function ChromeBadge({ size = "default" }: { size?: "default" | "small" }
 
   return (
     <a
-      href="#"
-      className="inline-flex items-center gap-3 bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg"
+      href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
+      className="inline-flex items-center gap-3 bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg border border-gray-700"
       target="_blank"
       rel="noopener noreferrer"
     >

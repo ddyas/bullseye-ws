@@ -2,12 +2,71 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { CheckCircle, Phone, Search, Download, RefreshCw } from "lucide-react"
+import { Phone, Search, Download, RefreshCw, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { PricingCard } from "@/components/pricing-card"
 import Image from "next/image"
 
+const CheckIcon = () => (
+  <svg 
+    width="22" 
+    height="22" 
+    viewBox="0 0 22 22" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-5 h-5 flex-shrink-0 mt-0.5"
+    style={{ filter: 'drop-shadow(0 1px 2px rgba(34, 197, 94, 0.3))' }}
+  >
+    <circle cx="11" cy="11" r="11" fill="#22c55e" />
+    <path 
+      d="M6.5 11.5L9.5 14.5L15.5 8" 
+      stroke="white" 
+      strokeWidth="2.5" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    />
+  </svg>
+)
+
+const screenshots = [
+  { src: "/images/bullseye-dashboard-new.png", alt: "Dashboard & Credits" },
+  { src: "/images/bullseye-linkedin-profile.png", alt: "LinkedIn Profile Integration" },
+  { src: "/images/bullseye-contacts-export.png", alt: "Export & Manage Contacts" },
+]
+
 export default function HomePage() {
   const [isAnnual, setIsAnnual] = useState(true)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [currentImage, setCurrentImage] = useState(0)
+
+  const openLightbox = (index: number) => {
+    setCurrentImage(index)
+    setLightboxOpen(true)
+  }
+
+  const closeLightbox = () => {
+    setLightboxOpen(false)
+  }
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setCurrentImage((prev) => (prev + 1) % screenshots.length)
+  }
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setCurrentImage((prev) => (prev - 1 + screenshots.length) % screenshots.length)
+  }
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!lightboxOpen) return
+      if (e.key === "Escape") closeLightbox()
+      if (e.key === "ArrowRight") setCurrentImage((prev) => (prev + 1) % screenshots.length)
+      if (e.key === "ArrowLeft") setCurrentImage((prev) => (prev - 1 + screenshots.length) % screenshots.length)
+    }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [lightboxOpen])
 
   useEffect(() => {
     const observerOptions = {
@@ -31,6 +90,66 @@ export default function HomePage() {
 
   return (
     <div className="overflow-hidden">
+      {/* Lightbox Modal */}
+      {lightboxOpen && (
+        <div 
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center cursor-pointer"
+          onClick={closeLightbox}
+        >
+          {/* Close button */}
+          <button 
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            onClick={closeLightbox}
+          >
+            <X className="w-8 h-8" />
+          </button>
+          
+          {/* Previous arrow */}
+          <button 
+            className="absolute left-4 text-white hover:text-gray-300 transition-colors p-2 hover:bg-white/10 rounded-full"
+            onClick={prevImage}
+          >
+            <ChevronLeft className="w-10 h-10" />
+          </button>
+          
+          {/* Image */}
+          <div className="max-w-[90vw] max-h-[80vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={screenshots[currentImage].src}
+              alt={screenshots[currentImage].alt}
+              className="max-w-full max-h-[70vh] object-contain rounded-lg"
+            />
+          </div>
+          
+          {/* Next arrow */}
+          <button 
+            className="absolute right-4 text-white hover:text-gray-300 transition-colors p-2 hover:bg-white/10 rounded-full"
+            onClick={nextImage}
+          >
+            <ChevronRight className="w-10 h-10" />
+          </button>
+          
+          {/* Title and Dots indicator */}
+          <div className="absolute bottom-6 flex flex-col items-center gap-3">
+            <p className="text-white text-lg font-medium">{screenshots[currentImage].alt}</p>
+            <div className="flex gap-2">
+              {screenshots.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    index === currentImage ? "bg-white" : "bg-white/40 hover:bg-white/60"
+                  }`}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setCurrentImage(index)
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,25 +163,25 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
               <div className="flex items-start space-x-3 p-4">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <CheckIcon />
                 <span className="text-sm font-medium text-gray-700 leading-relaxed">
                   Access to 3M+ verified mobiles
                 </span>
               </div>
               <div className="flex items-start space-x-3 p-4">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <CheckIcon />
                 <span className="text-sm font-medium text-gray-700 leading-relaxed">
                   Bypass InMail and Catch-all email firewalls
                 </span>
               </div>
               <div className="flex items-start space-x-3 p-4">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <CheckIcon />
                 <span className="text-sm font-medium text-gray-700 leading-relaxed">
                   Share key contacts with your team
                 </span>
               </div>
               <div className="flex items-start space-x-3 p-4">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <CheckIcon />
                 <span className="text-sm font-medium text-gray-700 leading-relaxed">
                   Built for Sales Managers, BDMs and Growth
                 </span>
@@ -154,46 +273,55 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="fade-in">
-              <div className="bg-gray-100 rounded-2xl p-4 h-80 w-80 mx-auto flex items-center justify-center mb-4 hover:shadow-lg transition-shadow duration-200">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            <div className="fade-in text-center">
+              <button 
+                onClick={() => openLightbox(0)}
+                className="bg-gray-100 rounded-2xl p-4 mx-auto mb-4 hover:shadow-lg transition-all duration-200 inline-block cursor-pointer hover:scale-105"
+              >
                 <img
                   src="/images/bullseye-dashboard-new.png"
                   alt="Dashboard & Credits"
-                  className="max-w-full h-auto rounded-lg"
+                  className="max-w-[280px] h-auto rounded-lg"
                 />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+              </button>
+              <h3 className="text-xl font-semibold mb-2 flex items-center justify-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 Dashboard & Credits
               </h3>
               <p className="text-gray-600">Track your usage and manage credits from the dashboard</p>
             </div>
 
-            <div className="fade-in">
-              <div className="bg-gray-100 rounded-2xl p-4 h-80 w-80 mx-auto flex items-center justify-center mb-4 hover:shadow-lg transition-shadow duration-200">
+            <div className="fade-in text-center">
+              <button 
+                onClick={() => openLightbox(1)}
+                className="bg-gray-100 rounded-2xl p-4 mx-auto mb-4 hover:shadow-lg transition-all duration-200 inline-block cursor-pointer hover:scale-105"
+              >
                 <img
                   src="/images/bullseye-linkedin-profile.png"
                   alt="Bullseye LinkedIn Integration"
-                  className="max-w-full h-auto rounded-lg"
+                  className="max-w-[280px] h-auto rounded-lg"
                 />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+              </button>
+              <h3 className="text-xl font-semibold mb-2 flex items-center justify-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 LinkedIn Profile Integration
               </h3>
               <p className="text-gray-600">Reveals mobile numbers directly on LinkedIn profiles</p>
             </div>
 
-            <div className="fade-in">
-              <div className="bg-gray-100 rounded-2xl p-4 h-80 w-80 mx-auto flex items-center justify-center mb-4 hover:shadow-lg transition-shadow duration-200">
+            <div className="fade-in text-center">
+              <button 
+                onClick={() => openLightbox(2)}
+                className="bg-gray-100 rounded-2xl p-4 mx-auto mb-4 hover:shadow-lg transition-all duration-200 inline-block cursor-pointer hover:scale-105"
+              >
                 <img
                   src="/images/bullseye-contacts-export.png"
                   alt="Export Contacts"
-                  className="max-w-full h-auto rounded-lg"
+                  className="max-w-[280px] h-auto rounded-lg"
                 />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+              </button>
+              <h3 className="text-xl font-semibold mb-2 flex items-center justify-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 Export & Manage Contacts
               </h3>
