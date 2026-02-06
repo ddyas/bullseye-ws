@@ -151,7 +151,7 @@ export default function HomePage() {
       )}
 
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32">
+      <section className="relative py-16 lg:py-24">
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -199,7 +199,16 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center space-y-4">
+            <div className="flex flex-col items-center space-y-5">
+              <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2">
+                <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Obligation free</span>
+                <span className="text-gray-300" aria-hidden="true">|</span>
+                <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">No credit card required</span>
+                <span className="text-gray-300" aria-hidden="true">|</span>
+                <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Free credits on sign up</span>
+                <span className="text-gray-300" aria-hidden="true">|</span>
+                <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Try before you buy</span>
+              </div>
               <Link
                 href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
                 target="_blank"
@@ -208,25 +217,6 @@ export default function HomePage() {
                 Start Free Trial
               </Link>
               <p className="text-gray-500 italic">The most time efficient way to prospect Australian B2B.</p>
-
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mt-4">
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-gray-700">
-                  <CheckIcon />
-                  Obligation free
-                </span>
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-gray-700">
-                  <CheckIcon />
-                  No credit card required
-                </span>
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-gray-700">
-                  <CheckIcon />
-                  Free credits on sign up
-                </span>
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-gray-700">
-                  <CheckIcon />
-                  Try before you buy
-                </span>
-              </div>
             </div>
           </div>
         </div>
