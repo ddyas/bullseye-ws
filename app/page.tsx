@@ -151,8 +151,19 @@ export default function HomePage() {
       )}
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 lg:py-32">
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Hero%20section%20-%20image_with%20profile%20card_manager_male-G1H1giLFaIKQnQtu8LidGrewYZ3YYK.png"
+            alt=""
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-white/80" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center fade-in">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
               Connect directly with decision-makers.
@@ -194,16 +205,28 @@ export default function HomePage() {
                 target="_blank"
                 className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg"
               >
-                <Image
-                  src="/images/chrome-extension-logo.png"
-                  alt="Chrome"
-                  width={20}
-                  height={20}
-                  className="w-5 h-5"
-                />
-                Download for Chrome
+                Start Free Trial
               </Link>
               <p className="text-gray-500 italic">The most time efficient way to prospect Australian B2B.</p>
+
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mt-4">
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-gray-700">
+                  <CheckIcon />
+                  Obligation free
+                </span>
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-gray-700">
+                  <CheckIcon />
+                  No credit card required
+                </span>
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-gray-700">
+                  <CheckIcon />
+                  Free credits on sign up
+                </span>
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-gray-700">
+                  <CheckIcon />
+                  Try before you buy
+                </span>
+              </div>
             </div>
           </div>
         </div>
