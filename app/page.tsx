@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { Phone, Search, Download, RefreshCw, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { Phone, Search, Download, RefreshCw, X, ChevronLeft, ChevronRight, ShieldCheck, CreditCard, Gift, BadgeCheck, Rocket } from "lucide-react"
 import { PricingCard } from "@/components/pricing-card"
 import Image from "next/image"
 
@@ -200,20 +200,33 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-col items-center space-y-5">
-              <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2">
-                <span className="text-sm font-medium text-gray-700 uppercase tracking-wide">Obligation free</span>
-                <span className="text-gray-400" aria-hidden="true">|</span>
-                <span className="text-sm font-medium text-gray-700 uppercase tracking-wide">No credit card required</span>
-                <span className="text-gray-400" aria-hidden="true">|</span>
-                <span className="text-sm font-medium text-gray-700 uppercase tracking-wide">Free credits on sign up</span>
-                <span className="text-gray-400" aria-hidden="true">|</span>
-                <span className="text-sm font-medium text-gray-700 uppercase tracking-wide">Try before you buy</span>
+              <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 uppercase tracking-wide">
+                  <ShieldCheck className="w-4 h-4 text-gray-500" />
+                  Obligation free
+                </span>
+                <span className="text-gray-300" aria-hidden="true">|</span>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 uppercase tracking-wide">
+                  <CreditCard className="w-4 h-4 text-gray-500" />
+                  No credit card required
+                </span>
+                <span className="text-gray-300" aria-hidden="true">|</span>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 uppercase tracking-wide">
+                  <Gift className="w-4 h-4 text-gray-500" />
+                  Free credits on sign up
+                </span>
+                <span className="text-gray-300" aria-hidden="true">|</span>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 uppercase tracking-wide">
+                  <BadgeCheck className="w-4 h-4 text-gray-500" />
+                  Try before you buy
+                </span>
               </div>
               <Link
                 href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
                 target="_blank"
                 className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg uppercase tracking-wider"
               >
+                <Rocket className="w-5 h-5" />
                 START FREE TRIAL
               </Link>
               <p className="text-gray-600 italic">The most time efficient way to prospect Australian B2B.</p>
@@ -464,9 +477,28 @@ export default function HomePage() {
           </div>
 
           <div className="text-center fade-in">
-            <p className="text-lg text-gray-600 mb-8">Add-on: Top up 50 credits anytime for $37 AUD</p>
+            <p className="text-lg text-gray-600 mb-4">Add-on: Top up 50 credits anytime for $37 AUD</p>
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-8">
+              <span className="inline-flex items-center gap-1.5 text-sm text-gray-500">
+                <ShieldCheck className="w-4 h-4" />
+                Obligation free
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-sm text-gray-500">
+                <CreditCard className="w-4 h-4" />
+                No credit card required
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-sm text-gray-500">
+                <Gift className="w-4 h-4" />
+                Free credits on sign up
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-sm text-gray-500">
+                <BadgeCheck className="w-4 h-4" />
+                Try before you buy
+              </span>
+            </div>
             <div className="flex flex-col items-center space-y-4">
-              <Link href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb" target="_blank" className="btn-primary text-lg">
+              <Link href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb" target="_blank" className="btn-primary text-lg inline-flex items-center gap-2">
+                <Image src="/images/chrome-extension-logo.png" alt="Chrome" width={20} height={20} className="w-5 h-5" />
                 Download Extension
               </Link>
             </div>
