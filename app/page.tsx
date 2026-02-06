@@ -151,38 +151,49 @@ export default function HomePage() {
       )}
 
       {/* Hero Section */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 lg:py-24 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt=""
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-white/85" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center fade-in">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
               Connect directly with decision-makers.
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto">
+            <p className="text-xl lg:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
               Stop waiting. Start calling.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
               <div className="flex items-start space-x-3 p-4">
                 <CheckIcon />
-                <span className="text-sm font-medium text-gray-700 leading-relaxed">
+                <span className="text-sm font-medium text-gray-800 leading-relaxed">
                   Access to 3M+ verified mobiles
                 </span>
               </div>
               <div className="flex items-start space-x-3 p-4">
                 <CheckIcon />
-                <span className="text-sm font-medium text-gray-700 leading-relaxed">
+                <span className="text-sm font-medium text-gray-800 leading-relaxed">
                   Bypass InMail and Catch-all email firewalls
                 </span>
               </div>
               <div className="flex items-start space-x-3 p-4">
                 <CheckIcon />
-                <span className="text-sm font-medium text-gray-700 leading-relaxed">
+                <span className="text-sm font-medium text-gray-800 leading-relaxed">
                   Share key contacts with your team
                 </span>
               </div>
               <div className="flex items-start space-x-3 p-4">
                 <CheckIcon />
-                <span className="text-sm font-medium text-gray-700 leading-relaxed">
+                <span className="text-sm font-medium text-gray-800 leading-relaxed">
                   Built for Sales Managers, BDMs and Growth
                 </span>
               </div>
@@ -190,22 +201,22 @@ export default function HomePage() {
 
             <div className="flex flex-col items-center space-y-5">
               <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2">
-                <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Obligation free</span>
-                <span className="text-gray-300" aria-hidden="true">|</span>
-                <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">No credit card required</span>
-                <span className="text-gray-300" aria-hidden="true">|</span>
-                <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Free credits on sign up</span>
-                <span className="text-gray-300" aria-hidden="true">|</span>
-                <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Try before you buy</span>
+                <span className="text-sm font-medium text-gray-700 uppercase tracking-wide">Obligation free</span>
+                <span className="text-gray-400" aria-hidden="true">|</span>
+                <span className="text-sm font-medium text-gray-700 uppercase tracking-wide">No credit card required</span>
+                <span className="text-gray-400" aria-hidden="true">|</span>
+                <span className="text-sm font-medium text-gray-700 uppercase tracking-wide">Free credits on sign up</span>
+                <span className="text-gray-400" aria-hidden="true">|</span>
+                <span className="text-sm font-medium text-gray-700 uppercase tracking-wide">Try before you buy</span>
               </div>
               <Link
                 href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
                 target="_blank"
-                className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg"
+                className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg uppercase tracking-wider"
               >
-                Start Free Trial
+                START FREE TRIAL
               </Link>
-              <p className="text-gray-500 italic">The most time efficient way to prospect Australian B2B.</p>
+              <p className="text-gray-600 italic">The most time efficient way to prospect Australian B2B.</p>
             </div>
           </div>
         </div>
