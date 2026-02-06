@@ -169,8 +169,8 @@ export default function HomePage() {
               Connect directly with<br />
               <span className="text-gray-900">decision-makers.</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-900 mb-8 max-w-4xl mx-auto font-semibold tracking-tight">
-              Stop waiting. <span className="text-gray-500">Start calling.</span>
+            <p className="text-xl lg:text-2xl text-gray-500 mb-8 max-w-4xl mx-auto font-semibold tracking-tight">
+              Stop waiting. Start calling.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
@@ -279,7 +279,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-2xl border border-gray-200 overflow-hidden bg-gray-50">
               <div className="flex items-center gap-2.5 px-5 py-4 border-b md:border-b-0 md:border-r border-gray-200">
                 <ShieldCheck className="w-4 h-4 text-gray-400 shrink-0" />
-                <p className="text-sm font-semibold text-gray-900">Built for Australian sales teams</p>
+                <p className="text-sm font-semibold text-gray-900">Built for company growth</p>
               </div>
               <div className="flex items-center gap-2.5 px-5 py-4 border-b md:border-b-0 md:border-r border-gray-200">
                 <Phone className="w-4 h-4 text-gray-400 shrink-0" />
@@ -547,16 +547,8 @@ export default function HomePage() {
       {/* Final CTA Banner */}
       <section className="py-20 bg-black text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-12 flex flex-wrap items-center justify-center gap-x-3">
-            <span>The perfect companion for</span>
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images-qvyIeaQSuW8t8OpDGGfnfZbzwc3Pcs.webp"
-              alt="LinkedIn"
-              width={200}
-              height={50}
-              className="inline-block h-9 lg:h-12 w-auto"
-            />
-            <span>prospecting</span>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-12">
+            The perfect companion for LinkedIn prospecting
           </h2>
           <div className="flex flex-col items-center space-y-4">
             <Link
