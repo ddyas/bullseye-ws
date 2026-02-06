@@ -168,7 +168,7 @@ export default function HomePage() {
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
               Connect directly with decision-makers.
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
+            <p className="text-lg lg:text-xl text-gray-500 mb-8 max-w-4xl mx-auto font-medium uppercase tracking-widest">
               Stop waiting. Start calling.
             </p>
 
@@ -215,11 +215,6 @@ export default function HomePage() {
                   <Gift className="w-4 h-4 text-gray-500" />
                   Free credits on sign up
                 </span>
-                <span className="text-gray-300" aria-hidden="true">|</span>
-                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 uppercase tracking-wide">
-                  <BadgeCheck className="w-4 h-4 text-gray-500" />
-                  Try before you buy
-                </span>
               </div>
               <Link
                 href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
@@ -229,7 +224,6 @@ export default function HomePage() {
                 <Rocket className="w-5 h-5" />
                 START FREE TRIAL
               </Link>
-              <p className="text-gray-600 italic">The most time efficient way to prospect Australian B2B.</p>
             </div>
           </div>
         </div>
@@ -280,24 +274,24 @@ export default function HomePage() {
           </div>
 
           <div className="fade-in max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 bg-gray-900 rounded-2xl overflow-hidden">
-              <div className="flex items-center gap-3 px-6 py-5 border-b md:border-b-0 md:border-r border-gray-700">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 shrink-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-2xl border border-gray-200 overflow-hidden bg-gray-50">
+              <div className="flex items-center gap-3 px-6 py-5 border-b md:border-b-0 md:border-r border-gray-200">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-900 shrink-0">
                   <ShieldCheck className="w-5 h-5 text-white" />
                 </div>
-                <p className="text-sm font-semibold text-white tracking-wide">Built for Australian sales teams</p>
+                <p className="text-sm font-semibold text-gray-900 tracking-wide">Built for Australian sales teams</p>
               </div>
-              <div className="flex items-center gap-3 px-6 py-5 border-b md:border-b-0 md:border-r border-gray-700">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 shrink-0">
+              <div className="flex items-center gap-3 px-6 py-5 border-b md:border-b-0 md:border-r border-gray-200">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-900 shrink-0">
                   <Phone className="w-5 h-5 text-white" />
                 </div>
-                <p className="text-sm font-semibold text-white tracking-wide">3M+ verified mobile numbers</p>
+                <p className="text-sm font-semibold text-gray-900 tracking-wide">3M+ verified mobile numbers</p>
               </div>
               <div className="flex items-center gap-3 px-6 py-5">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 shrink-0">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-900 shrink-0">
                   <BadgeCheck className="w-5 h-5 text-white" />
                 </div>
-                <p className="text-sm font-semibold text-white tracking-wide">100% DNCR compliant</p>
+                <p className="text-sm font-semibold text-gray-900 tracking-wide">100% DNCR compliant</p>
               </div>
             </div>
           </div>
