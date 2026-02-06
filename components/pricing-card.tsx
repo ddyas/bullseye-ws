@@ -64,7 +64,7 @@ export function PricingCard({
           isPopular ? "bg-white text-black hover:bg-gray-100" : "bg-black text-white hover:bg-gray-800"
         }`}
       >
-        Get Started
+        Start Free Trial
       </Link>
     </div>
   )
