@@ -151,19 +151,8 @@ export default function HomePage() {
       )}
 
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24">
-        {/* Background image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Hero%20section%20-%20image_with%20profile%20card_manager_male-G1H1giLFaIKQnQtu8LidGrewYZ3YYK.png"
-            alt=""
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-white/80" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center fade-in">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
               Connect directly with decision-makers.
