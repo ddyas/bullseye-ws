@@ -142,10 +142,7 @@ export function Footer() {
                 <ShieldIcon />
                 Licensed Australian dataset
               </span>
-              <span className="flex items-center gap-2">
-                <CheckBadgeIcon />
-                100% DNCR compliant
-              </span>
+
             </div>
             <div className="flex flex-wrap gap-6 text-sm text-gray-400 md:justify-end">
               <span className="flex items-center gap-2">

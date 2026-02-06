@@ -166,7 +166,8 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center fade-in">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
-              Connect directly with decision-makers.
+              Connect directly with...<br />
+              decision-makers.
             </h1>
             <p className="text-lg lg:text-xl text-gray-500 mb-8 max-w-4xl mx-auto font-medium uppercase tracking-widest">
               Stop waiting. Start calling.
@@ -274,24 +275,18 @@ export default function HomePage() {
           </div>
 
           <div className="fade-in max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-2xl border border-gray-200 overflow-hidden bg-gray-50">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-2xl border border-gray-200 overflow-hidden bg-gray-50">
               <div className="flex items-center gap-3 px-6 py-5 border-b md:border-b-0 md:border-r border-gray-200">
                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-900 shrink-0">
                   <ShieldCheck className="w-5 h-5 text-white" />
                 </div>
                 <p className="text-sm font-semibold text-gray-900 tracking-wide">Built for Australian sales teams</p>
               </div>
-              <div className="flex items-center gap-3 px-6 py-5 border-b md:border-b-0 md:border-r border-gray-200">
+              <div className="flex items-center gap-3 px-6 py-5">
                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-900 shrink-0">
                   <Phone className="w-5 h-5 text-white" />
                 </div>
                 <p className="text-sm font-semibold text-gray-900 tracking-wide">3M+ verified mobile numbers</p>
-              </div>
-              <div className="flex items-center gap-3 px-6 py-5">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-900 shrink-0">
-                  <BadgeCheck className="w-5 h-5 text-white" />
-                </div>
-                <p className="text-sm font-semibold text-gray-900 tracking-wide">100% DNCR compliant</p>
               </div>
             </div>
           </div>
@@ -532,14 +527,6 @@ export default function HomePage() {
             </div>
 
             <div className="bg-white p-6 rounded-2xl border border-gray-200 fade-in">
-              <h3 className="text-xl font-semibold mb-3">Is Bullseye legal and compliant in Australia?</h3>
-              <p className="text-gray-600">
-                Yes, Bullseye is 100% DNCR compliant and uses licensed Australian datasets. All data is sourced legally
-                and stored securely in encrypted AU-based servers.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-gray-200 fade-in">
               <h3 className="text-xl font-semibold mb-3">How accurate is the data?</h3>
               <p className="text-gray-600">
                 Our database contains 3M+ verified mobile numbers with regular updates to ensure accuracy. We maintain
@@ -559,7 +546,14 @@ export default function HomePage() {
       {/* Final CTA Banner */}
       <section className="py-20 bg-black text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-12">The perfect companion for LinkedIn prospecting</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-12 inline-flex flex-wrap items-center justify-center gap-x-3">
+            <span>The perfect companion for</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="inline-block h-10 lg:h-14 w-auto" aria-label="LinkedIn">
+              <rect width="512" height="512" rx="76" fill="#0A66C2" />
+              <path d="M160.4 367.7h-56.3V214.8h56.3v152.9zm-28.2-173.8c-18 0-32.6-14.7-32.6-32.6 0-18 14.6-32.6 32.6-32.6s32.6 14.6 32.6 32.6c0 18-14.6 32.6-32.6 32.6zm241.1 173.8h-56.1v-74.4c0-17.7-.3-40.5-24.7-40.5-24.7 0-28.5 19.3-28.5 39.2v75.7h-56.1V214.8h53.9v20.9h.7c7.5-14.2 25.8-29.2 53.2-29.2 56.9 0 67.4 37.5 67.4 86.2v75z" fill="#fff" />
+            </svg>
+            <span>prospecting</span>
+          </h2>
           <div className="flex flex-col items-center space-y-4">
             <Link
               href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"

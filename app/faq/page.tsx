@@ -15,11 +15,6 @@ const faqs = [
       "Our data comes from licensed Australian datasets that are regularly updated and verified. We maintain partnerships with legitimate data providers and ensure all information is sourced legally and ethically.",
   },
   {
-    question: "Is Bullseye legal and compliant in Australia?",
-    answer:
-      "Yes, Bullseye is 100% DNCR (Do Not Call Register) compliant and operates within Australian privacy laws. We use licensed datasets and ensure all data handling meets regulatory requirements.",
-  },
-  {
     question: "What fields are revealed?",
     answer:
       "Bullseye reveals mobile phone numbers, email addresses, company information, job titles, and other relevant contact details associated with LinkedIn profiles, depending on data availability.",
