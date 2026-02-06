@@ -279,11 +279,26 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="text-center fade-in">
-            <div className="bg-white p-8 rounded-2xl border border-gray-200 max-w-4xl mx-auto">
-              <p className="text-lg font-semibold mb-2">
-                Built for Australian sales teams. 3M+ verified mobile numbers. 100% DNCR compliant.
-              </p>
+          <div className="fade-in max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 bg-gray-900 rounded-2xl overflow-hidden">
+              <div className="flex items-center gap-3 px-6 py-5 border-b md:border-b-0 md:border-r border-gray-700">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 shrink-0">
+                  <ShieldCheck className="w-5 h-5 text-white" />
+                </div>
+                <p className="text-sm font-semibold text-white tracking-wide">Built for Australian sales teams</p>
+              </div>
+              <div className="flex items-center gap-3 px-6 py-5 border-b md:border-b-0 md:border-r border-gray-700">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 shrink-0">
+                  <Phone className="w-5 h-5 text-white" />
+                </div>
+                <p className="text-sm font-semibold text-white tracking-wide">3M+ verified mobile numbers</p>
+              </div>
+              <div className="flex items-center gap-3 px-6 py-5">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 shrink-0">
+                  <BadgeCheck className="w-5 h-5 text-white" />
+                </div>
+                <p className="text-sm font-semibold text-white tracking-wide">100% DNCR compliant</p>
+              </div>
             </div>
           </div>
         </div>
