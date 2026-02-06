@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { Phone, Search, Download, RefreshCw, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { Phone, Search, Download, RefreshCw, X, ChevronLeft, ChevronRight, ShieldCheck, CreditCard, Gift, BadgeCheck, Rocket } from "lucide-react"
 import { PricingCard } from "@/components/pricing-card"
 import Image from "next/image"
 
@@ -151,59 +151,81 @@ export default function HomePage() {
       )}
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 lg:py-24 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt=""
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-white/85" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center fade-in">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-              Connect directly with decision-makers.
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
+              Connect directly with<br />
+              <span className="text-gray-900">decision-makers.</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto">
+            <p className="text-xl lg:text-2xl text-gray-500 mb-8 max-w-4xl mx-auto font-semibold tracking-tight">
               Stop waiting. Start calling.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
               <div className="flex items-start space-x-3 p-4">
                 <CheckIcon />
-                <span className="text-sm font-medium text-gray-700 leading-relaxed">
+                <span className="text-sm font-medium text-gray-800 leading-relaxed">
                   Access to 3M+ verified mobiles
                 </span>
               </div>
               <div className="flex items-start space-x-3 p-4">
                 <CheckIcon />
-                <span className="text-sm font-medium text-gray-700 leading-relaxed">
+                <span className="text-sm font-medium text-gray-800 leading-relaxed">
                   Bypass InMail and Catch-all email firewalls
                 </span>
               </div>
               <div className="flex items-start space-x-3 p-4">
                 <CheckIcon />
-                <span className="text-sm font-medium text-gray-700 leading-relaxed">
+                <span className="text-sm font-medium text-gray-800 leading-relaxed">
                   Share key contacts with your team
                 </span>
               </div>
               <div className="flex items-start space-x-3 p-4">
                 <CheckIcon />
-                <span className="text-sm font-medium text-gray-700 leading-relaxed">
+                <span className="text-sm font-medium text-gray-800 leading-relaxed">
                   Built for Sales Managers, BDMs and Growth
                 </span>
               </div>
             </div>
 
-            <div className="flex flex-col items-center space-y-4">
+            <div className="flex flex-col items-center space-y-5">
+              <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 uppercase tracking-wide">
+                  <ShieldCheck className="w-4 h-4 text-gray-500" />
+                  Obligation free
+                </span>
+                <span className="text-gray-300" aria-hidden="true">|</span>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 uppercase tracking-wide">
+                  <CreditCard className="w-4 h-4 text-gray-500" />
+                  No credit card required
+                </span>
+                <span className="text-gray-300" aria-hidden="true">|</span>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 uppercase tracking-wide">
+                  <Gift className="w-4 h-4 text-gray-500" />
+                  Free credits on sign up
+                </span>
+              </div>
               <Link
                 href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
                 target="_blank"
-                className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg"
+                className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-200 hover:scale-105 shadow-lg uppercase tracking-wider"
               >
-                <Image
-                  src="/images/chrome-extension-logo.png"
-                  alt="Chrome"
-                  width={20}
-                  height={20}
-                  className="w-5 h-5"
-                />
-                Download for Chrome
+                <Rocket className="w-5 h-5" />
+                START FREE TRIAL
               </Link>
-              <p className="text-gray-500 italic">The most time efficient way to prospect Australian B2B.</p>
+              <p className="text-sm text-gray-500 font-medium tracking-wide">The most time efficient way to prospect Australian B2B.</p>
             </div>
           </div>
         </div>
@@ -253,11 +275,20 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="text-center fade-in">
-            <div className="bg-white p-8 rounded-2xl border border-gray-200 max-w-4xl mx-auto">
-              <p className="text-lg font-semibold mb-2">
-                Built for Australian sales teams. 3M+ verified mobile numbers. 100% DNCR compliant.
-              </p>
+          <div className="fade-in max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-2xl border border-gray-200 overflow-hidden bg-gray-50">
+              <div className="flex items-center gap-2.5 px-5 py-4 border-b md:border-b-0 md:border-r border-gray-200">
+                <ShieldCheck className="w-4 h-4 text-gray-400 shrink-0" />
+                <p className="text-sm font-semibold text-gray-900">Built for company growth</p>
+              </div>
+              <div className="flex items-center gap-2.5 px-5 py-4 border-b md:border-b-0 md:border-r border-gray-200">
+                <Phone className="w-4 h-4 text-gray-400 shrink-0" />
+                <p className="text-sm font-semibold text-gray-900">3M+ verified mobile numbers</p>
+              </div>
+              <div className="flex items-center gap-2.5 px-5 py-4">
+                <BadgeCheck className="w-4 h-4 text-gray-400 shrink-0" />
+                <p className="text-sm font-semibold text-gray-900">Trusted by sales teams Australia-wide</p>
+              </div>
             </div>
           </div>
         </div>
@@ -451,9 +482,28 @@ export default function HomePage() {
           </div>
 
           <div className="text-center fade-in">
-            <p className="text-lg text-gray-600 mb-8">Add-on: Top up 50 credits anytime for $37 AUD</p>
+            <p className="text-lg text-gray-600 mb-4">Add-on: Top up 50 credits anytime for $37 AUD</p>
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-8">
+              <span className="inline-flex items-center gap-1.5 text-sm text-gray-500">
+                <ShieldCheck className="w-4 h-4" />
+                Obligation free
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-sm text-gray-500">
+                <CreditCard className="w-4 h-4" />
+                No credit card required
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-sm text-gray-500">
+                <Gift className="w-4 h-4" />
+                Free credits on sign up
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-sm text-gray-500">
+                <BadgeCheck className="w-4 h-4" />
+                Try before you buy
+              </span>
+            </div>
             <div className="flex flex-col items-center space-y-4">
-              <Link href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb" target="_blank" className="btn-primary text-lg">
+              <Link href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb" target="_blank" className="btn-primary text-lg inline-flex items-center gap-2">
+                <Image src="/images/chrome-extension-logo.png" alt="Chrome" width={20} height={20} className="w-5 h-5" />
                 Download Extension
               </Link>
             </div>
@@ -478,14 +528,6 @@ export default function HomePage() {
             </div>
 
             <div className="bg-white p-6 rounded-2xl border border-gray-200 fade-in">
-              <h3 className="text-xl font-semibold mb-3">Is Bullseye legal and compliant in Australia?</h3>
-              <p className="text-gray-600">
-                Yes, Bullseye is 100% DNCR compliant and uses licensed Australian datasets. All data is sourced legally
-                and stored securely in encrypted AU-based servers.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-gray-200 fade-in">
               <h3 className="text-xl font-semibold mb-3">How accurate is the data?</h3>
               <p className="text-gray-600">
                 Our database contains 3M+ verified mobile numbers with regular updates to ensure accuracy. We maintain
@@ -505,7 +547,9 @@ export default function HomePage() {
       {/* Final CTA Banner */}
       <section className="py-20 bg-black text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-12">The perfect companion for LinkedIn prospecting</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-12">
+            The perfect companion for LinkedIn prospecting
+          </h2>
           <div className="flex flex-col items-center space-y-4">
             <Link
               href="https://chromewebstore.google.com/detail/jeckighgbnipkjmcmmdcdglmljekjnno?utm_source=item-share-cb"
