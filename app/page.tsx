@@ -37,6 +37,34 @@ export default function HomePage() {
   const [isAnnual, setIsAnnual] = useState(true)
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImage, setCurrentImage] = useState(0)
+  const [authMessage, setAuthMessage] = useState<{ type: 'success' | 'error', message: string } | null>(null)
+
+  // Handle Supabase auth errors/success from URL hash
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash
+      if (hash.includes('error=')) {
+        const params = new URLSearchParams(hash.substring(1))
+        const errorCode = params.get('error_code')
+        
+        if (errorCode === 'otp_expired') {
+          setAuthMessage({
+            type: 'success',
+            message: 'Your account has already been confirmed! Please open the Bullseye extension and login to continue.'
+          })
+        } else {
+          const errorDesc = params.get('error_description')?.replace(/\+/g, ' ')
+          setAuthMessage({
+            type: 'error',
+            message: errorDesc || 'An error occurred. Please try again.'
+          })
+        }
+        
+        // Clean up the ugly URL hash
+        window.history.replaceState(null, '', window.location.pathname)
+      }
+    }
+  }, [])
 
   const openLightbox = (index: number) => {
     setCurrentImage(index)
@@ -146,6 +174,34 @@ export default function HomePage() {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Auth Message Banner */}
+      {authMessage && (
+        <div className={`fixed top-0 left-0 right-0 z-50 px-4 py-4 ${
+          authMessage.type === 'success' ? 'bg-green-50 border-b border-green-200' : 'bg-red-50 border-b border-red-200'
+        }`}>
+          <div className="max-w-4xl mx-auto flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              {authMessage.type === 'success' ? (
+                <BadgeCheck className="w-6 h-6 text-green-600 flex-shrink-0" />
+              ) : (
+                <X className="w-6 h-6 text-red-600 flex-shrink-0" />
+              )}
+              <p className={`font-medium ${authMessage.type === 'success' ? 'text-green-800' : 'text-red-800'}`}>
+                {authMessage.message}
+              </p>
+            </div>
+            <button
+              onClick={() => setAuthMessage(null)}
+              className={`p-1 rounded-full hover:bg-white/50 transition-colors ${
+                authMessage.type === 'success' ? 'text-green-600' : 'text-red-600'
+              }`}
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
         </div>
       )}
